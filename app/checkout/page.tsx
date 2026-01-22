@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CreditCard, Bitcoin, Wallet, Lock, CheckCircle, ArrowLeft, Copy, Loader2, Banknote } from "lucide-react"
+import { CreditCard, Bitcoin, Wallet, Lock, CheckCircle, ArrowLeft, Copy, Loader2, Banknote, Truck } from "lucide-react"
 import { useCart } from "@/components/cart-provider"
 import { toast } from "sonner"
 
@@ -33,6 +33,7 @@ export default function CheckoutPage() {
     standard: 99,
     express: 249,
     overnight: 499,
+    paxi: 59.95, // PAXI delivery option
   }
 
   const subtotal = total
@@ -214,9 +215,40 @@ export default function CheckoutPage() {
                       </div>
                       <span className="font-semibold">R499</span>
                     </div>
+                    <div className="flex items-center justify-between p-4 border border-border rounded-lg cursor-pointer hover:bg-muted/50">
+                      <div className="flex items-center gap-3">
+                        <RadioGroupItem value="paxi" id="paxi" />
+                        <Label htmlFor="paxi" className="cursor-pointer">
+                          <div className="font-medium flex items-center gap-2">
+                            <Truck className="h-4 w-4" />
+                            PAXI Store Delivery
+                          </div>
+                          <div className="text-sm text-muted-foreground">Collect from nearest PAXI location</div>
+                        </Label>
+                      </div>
+                      <span className="font-semibold">R59.95</span>
+                    </div>
                   </RadioGroup>
                 </CardContent>
               </Card>
+
+              {shippingMethod === 'paxi' && (
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                  <div className="flex items-start gap-3">
+                    <Truck className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div>
+                      <h4 className="font-medium text-blue-900">PAXI Store Delivery</h4>
+                      <p className="text-sm text-blue-700 mt-1">
+                        You will be able to select your nearest PAXI pickup point after placing your order.
+                        You'll receive an SMS notification when your order arrives at the store.
+                      </p>
+                      <Link href="/paxi-delivery" className="text-sm text-blue-700 underline mt-2 inline-block">
+                        Learn more about PAXI delivery
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Payment Method */}
               <Card>

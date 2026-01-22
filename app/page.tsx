@@ -20,6 +20,7 @@ import {
   Baby,
   Dog,
   Sparkles,
+  Ruler,
 } from "lucide-react"
 
 const categories = [
@@ -316,6 +317,110 @@ export default function Home() {
                   <p className="text-2xl font-bold text-foreground">5,000+ Vendors</p>
                   <p className="text-muted-foreground">Already selling on Buddies</p>
                 </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* South African Focus */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Made for South Africa</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Local delivery via PAXI/PEP with 2800+ locations nationwide. Supporting local communities and businesses.
+            </p>
+          </div>
+
+          <Card className="overflow-hidden">
+            <div className="grid md:grid-cols-2">
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <Badge className="w-fit mb-4 bg-primary/20 text-primary border-primary/30">Local Delivery</Badge>
+                <h2 className="text-3xl font-bold text-foreground mb-4">PAXI/PEP Store Delivery</h2>
+                <p className="text-muted-foreground mb-6">
+                  Enjoy convenient store pickup with over 2800 PAXI locations across South Africa. 
+                  Safe, secure, and accessible from Cape Town to Durban.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <Truck className="h-5 w-5 text-primary" />
+                    <span>R59.95 flat rate nationwide</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <ShieldCheck className="h-5 w-5 text-primary" />
+                    <span>SMS notifications when ready</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <Clock className="h-5 w-5 text-primary" />
+                    <span>Track your shipment in real-time</span>
+                  </li>
+                </ul>
+                <Link href="/paxi-delivery">
+                  <Button size="lg" className="w-fit bg-primary text-primary-foreground hover:bg-primary/90">
+                    Find PAXI Store
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+              <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 p-8 flex items-center justify-center">
+                <div className="text-center">
+                  <Truck className="h-32 w-32 text-primary mx-auto mb-4 opacity-80" />
+                  <p className="text-2xl font-bold text-foreground">2800+ Locations</p>
+                  <p className="text-muted-foreground">Nationwide PAXI coverage</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* 3D Printing Promotion */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">3D Printing Services</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Upload your designs and get them printed with our professional 3D printing service. 
+              Free delivery via PAXI to any location.
+            </p>
+          </div>
+
+          <Card className="overflow-hidden">
+            <div className="grid md:grid-cols-2">
+              <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 p-8 flex items-center justify-center">
+                <div className="text-center">
+                  <Ruler className="h-32 w-32 text-purple-500 mx-auto mb-4 opacity-80" />
+                  <p className="text-2xl font-bold text-foreground">Print-on-Demand</p>
+                  <p className="text-muted-foreground">Quality 3D printing service</p>
+                </div>
+              </div>
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <Badge className="w-fit mb-4 bg-purple-500/20 text-purple-600 border-purple-500/30">New Service</Badge>
+                <h2 className="text-3xl font-bold text-foreground mb-4">Custom 3D Printing</h2>
+                <p className="text-muted-foreground mb-6">
+                  Have a custom design? We'll print it professionally and deliver it via PAXI to any location in South Africa.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <Sparkles className="h-5 w-5 text-purple-500" />
+                    <span>High-quality PLA/ABS/TPU materials</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <Truck className="h-5 w-5 text-purple-500" />
+                    <span>Free PAXI delivery on all prints</span>
+                  </li>
+                  <li className="flex items-center gap-2 text-muted-foreground">
+                    <Ruler className="h-5 w-5 text-purple-500" />
+                    <span>Competitive pricing with volume discounts</span>
+                  </li>
+                </ul>
+                <Link href="/3d-printing">
+                  <Button size="lg" className="w-fit bg-purple-600 text-white hover:bg-purple-700">
+                    Upload Your Design
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </Card>
