@@ -71,6 +71,12 @@ export function SiteHeader() {
             >
               Web3
             </Link>
+            <Link
+              href="/client-intake"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium whitespace-nowrap"
+            >
+              Project Intake
+            </Link>
           </nav>
 
           {/* Actions */}
@@ -206,6 +212,12 @@ export function SiteHeader() {
                       className="block py-2 text-lg font-medium hover:text-primary transition-colors"
                     >
                       My Wishlist
+                    </Link>
+                    <Link
+                      href="/client-intake"
+                      className="block py-2 text-lg font-medium hover:text-primary transition-colors"
+                    >
+                      Project Intake
                     </Link>
                     <Link
                       href="/account"
