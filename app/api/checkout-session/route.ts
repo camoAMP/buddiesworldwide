@@ -1,12 +1,13 @@
 import { type NextRequest, NextResponse } from "next/server"
-import Stripe from "stripe"
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-06-20",
-})
+import { getStripeClient } from "@/lib/stripe"
 
 export async function GET(request: NextRequest) {
   try {
+    const stripe = getStripeClient()
+    if (!stripe) {
+      return NextResponse.json({ error: "Stripe is not configured" }, { status: 500 })
+    }
+
     const { searchParams } = new URL(request.url)
     const sessionId = searchParams.get("session_id")
 

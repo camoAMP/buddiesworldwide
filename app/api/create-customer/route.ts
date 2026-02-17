@@ -1,12 +1,13 @@
 import { type NextRequest, NextResponse } from "next/server"
-import Stripe from "stripe"
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-06-20",
-})
+import { getStripeClient } from "@/lib/stripe"
 
 export async function POST(request: NextRequest) {
   try {
+    const stripe = getStripeClient()
+    if (!stripe) {
+      return NextResponse.json({ error: "Stripe is not configured" }, { status: 500 })
+    }
+
     const { email, name } = await request.json()
 
     const customer = await stripe.customers.create({
