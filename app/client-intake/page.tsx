@@ -84,9 +84,9 @@ export default function ClientIntakePage() {
                 className="h-28 w-28 rounded-2xl border border-slate-700 bg-white object-cover"
               />
               <div>
-                <h1 className="text-3xl font-black tracking-tight">Client Intake Form</h1>
+                <h1 className="text-3xl font-black tracking-tight">CamO&apos;s Dev Studio</h1>
                 <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">
-                  Cameron Dev Studio
+                  Client Intake Form
                 </p>
                 <p className="mt-3 max-w-3xl text-slate-300">
                   Complete this form to start your project. Your submission creates a client folder,
